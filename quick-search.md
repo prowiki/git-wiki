@@ -57,6 +57,11 @@ git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Crese
 git config --global core.editor vim
 ```
 
+6. Config bash prompt for git.
+
+Here's my favorite theme: [link](https://gist.github.com/justintv/168835#gistcomment-1717504).
+
+
 ## Basic
 
 1. Add files or directories from `Working Directory` to `Staging Area`. Add files or directories from `Staging Area` to `Local Repo`.
@@ -211,7 +216,7 @@ git diff --staged
 
 ```bash
 git stash # stash
-git stash save "stash message" # stash with specified message
+git stash push "stash message" # stash with specified message
 git stash list # show all stashed version
 git stash pop # restore the latest stashed version, then pop out the version
 git shash apply # restore the latest stashed version, without popping out the version
@@ -275,6 +280,10 @@ git cherry-pick <commit-id>
 ```bash
 git revert <commit-id>
 ```
+
+2. Revert a change against a specific file.
+
+Assuming the commit history is `commit-1 - commit-2` now and you want to revert the change against the specific file in `commit-2`. You can either do `git checkout commit-1 -- file` or `git checkout commit-2~1 -- file`.
 
 ## Tag
 
