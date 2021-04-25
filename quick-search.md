@@ -23,6 +23,11 @@ git config --global user.username "MY_NAME"
 git config --global user.email "MY_NAME@example.com"
 ```
 
+or edit the `.gitconfig` file directly:
+```bash
+git config --global --edit
+```
+
 2. Config remote for a repo.
 
 ```bash
@@ -46,6 +51,12 @@ Debug/ # ignore all subdirectories(including current directory) named Debug
 git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 ```
 
+5. Config default editor.
+
+```bash
+git config --global core.editor vim
+```
+
 ## Basic
 
 1. Add files or directories from `Working Directory` to `Staging Area`. Add files or directories from `Staging Area` to `Local Repo`.
@@ -54,6 +65,29 @@ git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Crese
 git add <file/dir>
 git commit -m "COMMIT MESSAGE"
 git commit --amend # change commit message of the last commit
+```
+
+However, it's not recommended to use `git commit -m "xxx"` because it provides limited description of what has been changed. Use `git commit` instead and following the example below to fill the prompt editor.
+
+```
+Capitalized, short (50 chars or less) summary
+
+More detailed explanatory text, if necessary.  Wrap it to about 72
+characters or so.  In some contexts, the first line is treated as the
+subject of an email and the rest of the text as the body.  The blank
+line separating the summary from the body is critical (unless you omit
+the body entirely); tools like rebase can get confused if you run the
+two together.
+
+Write your commit message in the imperative: "Fix bug" and not "Fixed bug"
+ or "Fixes bug."  This convention matches up with commit messages generated
+by commands like git merge and git revert.
+
+Further paragraphs come after blank lines.
+
+- Bullet points are okay, too
+- Typically a hyphen or asterisk is used for the bullet, followed by a single space, with blank lines in between, but conventions vary here
+- Use a hanging indent
 ```
 
 2. Show repo status.
@@ -66,6 +100,7 @@ git status
 
 ```bash
 git log
+git lg # with alias config
 ```
 
 4. Switch branch.
