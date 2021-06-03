@@ -13,6 +13,7 @@
   * [Revert](#revert)
   * [Tag](#tag)
   * [Reflog](#reflog)
+  * [Misc](#misc)
 
 ## Setup
 
@@ -317,4 +318,13 @@ git push origin --tags # push all tags
 
 ```bash
 git reflog
+```
+
+## Misc
+
+1. Reset local branch with remote banch. Sometimes, we might commit to local master branch by mistake, which will prevent us from pulling from remote master. So we need to discard the local commits and reset the local branch.
+
+```bash
+git fetch origin
+git reset --hard origin/master
 ```
